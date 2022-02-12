@@ -2,8 +2,11 @@ package co.com.poli.lambda;
 
 public class Lambdas {
     public static void main(String[] args) {
-        Thread t1 = new Thread(
-                () ->  System.out.println("Thread executed"));
-        t1.start();
+       GenericInterface<String, String> fun = s -> s.substring(1, 5);
+
+        System.out.println(fun.excecute("Basic"));
+
+        GenericInterface<String, Integer> fun2 = s -> s.length();
+        System.out.println(fun2.excecute("Basic"));
     }
 }
